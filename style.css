@@ -8,9 +8,9 @@ body {
 .heading {
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
-  margin: 30px;
-  max-width: 100%;
-  border-radius: 10px;
+  margin: 30%;
+  max-width: 70%;
+  border-radius: 10px
 }
 .heading:hover {
   cursor: pointer;
