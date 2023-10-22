@@ -61,6 +61,7 @@ p {
   width: 100%;
   color: black;
   cursor: pointer;
+  animation: explode 3s ease infinite;
 }
 .divider {
   width: 70%;
