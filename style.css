@@ -14,7 +14,7 @@ body {
 }
 .heading:hover {
   cursor: pointer;
-  animation: explode 3s ease infinite;
+  animation: explode 3s ease;
 }
 h1 {
   font-size: 54pt;
