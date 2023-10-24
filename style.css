@@ -87,7 +87,7 @@ p {
     transition: scale(1.2);
   }
 }
-#openGameResult {
+.alt {
   display: none;
 }
 .open {
