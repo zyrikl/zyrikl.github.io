@@ -4,12 +4,14 @@
     <link rel="stylesheet" href="style.css">
     <title>Aventures d'Omega</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
   </head>
   <body>
     <div class="nav-bar">
       <a href="index.html"><button class="nav">Section d'Accueil</button></a>
       <a href="https://alpbetgamdel.github.io/index" target="_blank"><button class="nav">Alpha Beta Gamma Delta (anglais)</button></a>
       <a href="https://omega-beta.github.io/pranker-go-alt-mem" target="_blank"><button class="nav">Farceur d'Google</button></a>
+      <button class="nav" id="game">Jeu!</button>
     </div>
     <div class="divider">
       <a href="index.html">
@@ -37,6 +39,11 @@
         <div class="article">
           <p>Si quelque chose de mal vous arrive, asseyez-vous et attendez que le bien vous tombe dessus.</p>
           <p align="right">- Omega</p>
+        </div>
+        <br>
+        <div id="openGameResult">
+          <canvas id="game1" width="400" height="300"></canvas>
+          <canvas id="canvas"></canvas>
         </div>
         <br>
         <p style="font-size: 10pt;">Copyright 2023 Omega</p>
