@@ -1,4 +1,4 @@
-var game1 = function(processingInstance) {
+var game = function(processingInstance) {
     with(processingInstance) {
         size(400, 400);
         // This is frame rate adjuster
@@ -108,4 +108,4 @@ var game1 = function(processingInstance) {
     }
 };
 var canvas = document.getElementById("canvas");
-var processingInstance = new Processing(canvas, game1)
+var processingInstance = new Processing(canvas, game)
