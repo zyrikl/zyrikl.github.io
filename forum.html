@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        var title = document.getElementById("title");
+        var x = Math.random();
+        title.innerHTML = "Forum Test "+x;
+    </script>
+    <title id="title">Forum Test</title>
+  </head>
+  <body>
+    <h1>Forum</h1>
+    <p>This is only because an experimental test.</p>
+    <form method="post" action="addPosts.php">
+      <p>Name</p>
+      <input type="text" name="username" size="80" maxlength="80">
+      <p>Post Text</p>
+      <textarea name="textOfPost" rows="10" cols="40" wrap="virtual"></textarea>
+      <input type="submit" name="submitTopic" value="Create Post">
+    </form>
+  </body>
+</html>
