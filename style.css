@@ -9,13 +9,12 @@ body {
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   margin-left: 0%;
-  width: 70%;
-  border-radius: 10px
+  width: 90%;
+  border-radius: 10px;
 }
 .heading:hover {
   cursor: pointer;
-  animation-name: explode;
-  animation-duration: 4s;
+  animation: explode 4s linear infinite !important;
 }
 h1 {
   font-size: 54pt;
