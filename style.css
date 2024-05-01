@@ -47,6 +47,7 @@ p {
   bottom: 0;
   background: rgba(0, 0, 0, 1);
   position: fixed;
+  overflow-y: scroll;
 }
 .nav {
   color: rgba(255, 255, 255, 1);
