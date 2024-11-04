@@ -1,0 +1,77 @@
+body {
+    font-family: 'Roboto';
+    padding: 10px;
+}
+button {
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(0, 40, 255, 1);
+    color: white;
+    font-family: 'Roboto';
+    border: none;
+    margin-left: 10px;
+}
+button:hover {
+    background: linear-gradient(90deg, rgba(0, 40, 255, 0.7), rgba(0, 40, 255, 0.2));
+    cursor: pointer;
+    color: black;
+    margin-left: 10px;
+}
+input {
+    width: 200px;
+    padding: 10px;
+}
+.hr {
+    margin: 10px;
+    margin-left: 30px;
+    margin-top: 165px;
+    width: 600px;
+}
+p {
+    font-size: 14pt;
+}
+.card {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px 2px;
+    width: 600px;
+    display: none;
+}
+.appear {
+    display: block;
+}
+.info {
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.submit {
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(0, 40, 255, 1);
+    color: white;
+    font-family: 'Roboto';
+    border: none;
+}
+.submit:hover {
+    background: linear-gradient(90deg, rgba(0, 40, 255, 0.7), rgba(0, 40, 255, 0.2));
+    cursor: pointer;
+    color: black;
+}
+#head {
+    /* margin-top: 5px;
+    margin-left: 50px; */
+    position: fixed;
+    padding: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(200, 200, 200, 0.7));
+    width: 700px;
+    padding-left: 50px;
+    top: 0;
+    left: 0;
+}
+.intro {
+    width: 600px;
+}
