@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title id="title">0 cursors</title>
+    </head>
+    <body>
+        <div id="heading-wrapper">
+            <h1 id="display">0 cursors</h1>
+            <p>Number of auto clickers (cursors per second): <a id="numAuto">0</a></p>
+            <p>Cursors per click: <a id="numCpc">1</a></p>
+            <br>
+            <img src="mouse.png" id="mouse" draggable="false" />
+        </div>
+        <!-- <div class="middle-wrapper">
+            <div id="node-repeat">
+                <p>Bought an upgrade.</p>
+            </div>
+        </div> -->
+        <br>
+        <div class="title">
+            <div class="title-wrapper">
+                <h1 style="font-size: 40pt;">Cursor Clicker</h1>
+                <p>Welcome to Cursor Clicker, an idle game created by a bored person who can be found <a href="https://my-trivial-error.github.io">here</a>. Begin the game by clicking on the cursor. Buying upgrades will let you automatically get cursors or let you click faster. You can also cheat, but be warned: you might lose <b><i>all</i></b> your progress if you get it wrong!</p>
+                <br>
+                <h2>Update log</h2>
+                <p>Make sure to read all of the updates, becasue I'm still working on this thing. Note to self: I want to add gamemodes later though. For now, signing off! - C.W</p>
+                <ul>
+                    <li>
+                        <h4>July 19, 2024</h4>
+                        <p>Added some more better click upgrades.</p>
+                    </li>
+                    <li>
+                        <h4>July 18, 2024</h4>
+                        <p>Fixed this so that all content shows. Also, fixed enter for cheat! Sorry though, it only works once.</p>
+                    </li>
+                    <li>
+                        <h4>July 15, 2024</h4>
+                        <p>Changed the popup to an actual thing. Enter is buggy though...</p>
+                    </li>
+                    <li>
+                    <h4>July 13, 2024</h4>
+                    <p>Added a cheat popup. Can be bypassed though...</p>
+                </li>
+                <li>
+                        <h4>July 4, 2024</h4>
+                        <p>Hey all, just created this idle game. Working well, and have a happy 4th of July!</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="button-wrapper">
+            <div class="test">
+                <h2 style="padding-top: 0px;">Upgrades</h2>
+                <button id="auto1">Auto clicker 1: (price: <a id="price1">10</a>)</button>
+                <br>
+                <button id="auto2">Auto clicker 10: (price: <a id="price2">100</a>)</button>
+                <br>
+                <button id="auto3">Auto clicker 100: (price: <a id="price3">1,000</a>)</button>
+                <br>
+                <button id="auto4">Auto clicker 1,000: (price: <a id="price4">10,000</a>)</button>
+                <br>
+                <button id="auto5">Auto clicker 10,000: (price: <a id="price5">100,000</a>)</button>
+                <br>
+                <button id="auto6">Auto clicker 100,000: (price: <a id="price6">1,000,000</a>)</button>
+                <br>
+                <button id="auto7">Auto clicker 1,000,000: (price: <a id="price7">10,000,000</a>)</button>
+                <br>
+                <button id="auto8">Auto clicker Your CPC: (price: <a>10 times that amount</a>)</button>
+                <button id="cpc1">Better clicks 1: (price 10)</button>
+                <button id="cpc2">Better clicks 10: (price: 100)</button>
+                <button id="cpc3">Better clicks 100: (price: 1,000)</button>
+                <button id="cpc4">Better clicks 1,000: (price: 10,000)</button>
+                <button id="cpc5">Better clicks 10,000: (price: 100,000)</button>
+                <button id="cpc6">Better clicks 100,000: (price: 1,000,000)</button>
+                <button id="cpc7">Better clicks 1,000,000: (price: 10,000,000)</button>
+                <button id="cheat">Cheat!</button>
+            </div>
+        </div>
+        <div id="getInputOf">
+            <div class="getInputOf" id="b">
+                <h2>Cheat!</h2>
+                <p>Guess the password to get cursors added to your current value!</p>
+                <input id="password" placeholder="Password" type="password" />
+                <input id="amount" placeholder="Amount" />
+                <input type="submit" value="Enter" id="submit" />
+                <button id="show" style="width: 120px; padding: 1px;">Show password</button>
+                <script>
+                    var show = document.getElementById("show");
+                    var something = document.getElementById("password");
+                    var ab = 0
+                    show.addEventListener("mousedown", function() {
+                        ab += 1
+                        if (ab % 2 == 1) {
+                            something.setAttribute("type", "text")
+                        } else {
+                            something.setAttribute("type", "password")
+                        }
+                    });
+                </script>
+                <!-- </form> -->
+            </div>
+        </div>
+        <style>
+            .getInputOf {
+                display: none;
+                position: fixed;
+                padding: 30px;
+                margin: 100px;
+                background: white;
+                z-index: 5;
+            }
+            #getInputOf {
+                display: none;
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 5;
+            }
+            .veer {
+                display: block;
+            }
+        </style>
+        <script>
+            var title = document.getElementById("title");
+            var display = document.getElementById("display");
+            var cursor = document.getElementById("mouse");
+            // var particles = document.getElementById("particle");
+            var numAuto = document.getElementById("numAuto");
+            var numCpc = document.getElementById("numCpc");
+            
+            var auto1 = document.getElementById("auto1");
+            var auto2 = document.getElementById("auto2");
+            var auto3 = document.getElementById("auto3");
+            var auto4 = document.getElementById("auto4");
+            var auto5 = document.getElementById("auto5");
+            var auto6 = document.getElementById("auto6");
+            var auto7 = document.getElementById("auto7");
+            var auto8 = document.getElementById("auto8");
+
+            var price1 = document.getElementById("price1");
+            var price2 = document.getElementById("price2");
+            var price3 = document.getElementById("price3");
+            var price4 = document.getElementById("price4");
+            var price5 = document.getElementById("price5");
+            var price6 = document.getElementById("price6");
+            var price7 = document.getElementById("price7");
+
+            var cpc1 = document.getElementById("cpc1");
+            var cpc2 = document.getElementById("cpc2");
+            var cpc3 = document.getElementById("cpc3");
+            var cpc4 = document.getElementById("cpc4");
+            var cpc5 = document.getElementById("cpc5");
+            var cpc6 = document.getElementById("cpc6");
+            var cpc7 = document.getElementById("cpc7");
+            
+            var cursors = 0;
+            var alt = 0;
+            var cpc = 1;
+
+            function fix() {
+                if (cursors == 1) {
+                    display.innerHTML = "1 cursor";
+                    title.innerHTML = "1 cursor";
+                } else {
+                    display.innerHTML = String(cursors) + " cursors";
+                    title.innerHTML = String(cursors) + " cursors";
+                }
+            }
+            /* function particleGenerator() {
+                particle.classList.toggle("show");
+                particle.style.margin-top = particle.style.margin-top + "10px";
+                setTimeout(particleGenerator, 1000);
+            } */
+            cursor.addEventListener("click", function(e) {
+                if (e.value = "click") {/* alert this */}
+                cursors = cursors + cpc;
+                // particleGenerator()
+                fix();
+            });
+            function update() {
+                cursors = Number(cursors) + alt;
+                fix()
+                numAuto.innerHTML = alt;
+                var sect = 1000/alt
+                setTimeout(update, 1000);
+            }
+            function auto(what, numInsert) {
+                var t = numInsert
+                what.addEventListener("click", function(e) {
+                    if (e.value = "click") {/* alert this */}
+                    if (cursors < numInsert) {
+                        alt = alt;
+                    } else {
+                        alt = alt + (numInsert/10);
+                        cursors = Number(cursors) - (numInsert + alt);
+                        numAuto.innerHTML = alt;
+                    }
+                });
+            }
+            function cpcBuild(what, numInsert) {
+                what.addEventListener("click", function(e) {
+                    if (e.value = "click") {/* alert this */}
+                    if (cursors < numInsert) {
+                        cpc = cpc;
+                    } else {
+                        cpc = cpc + (numInsert/10);
+                        cursors = cursors - numInsert;
+                        numCpc.innerHTML = cpc;
+                    }
+                });
+            }
+            auto(auto1, 10);
+            auto(auto2, 100);
+            auto(auto3, 1000);
+            auto(auto4, 10000);
+            auto(auto5, 100000);
+            auto(auto6, 1000000);
+            auto(auto7, 10000000);
+            auto(auto8, cpc)
+            cpcBuild(cpc1, 10);
+            cpcBuild(cpc2, 100);
+            cpcBuild(cpc3, 1000);
+            cpcBuild(cpc4, 10000);
+            cpcBuild(cpc5, 100000);
+            cpcBuild(cpc6, 1000000);
+            cpcBuild(cpc7, 10000000);
+            update();
+            var inputValue = document.getElementById("getInputOf");
+            var b = document.getElementById("b");
+            var password = document.getElementById("password");
+            var amount = document.getElementById("amount");
+            var submit = document.getElementById("submit");
+            function getInput() {
+                inputValue.classList.toggle("show");
+                submit.addEventListener("mousedown", function() {
+                    if (password.value == "charles is cool") {
+                        cursors = cursors + amount.value;
+                    } else {
+                        cursors = 0;
+                        cpc = 1;
+                    }
+                    inputValue.style.display = "none";
+                    b.style.display = "none";
+                    password.value = "";
+                    amount.value = ""
+                });
+                document.addEventListener("keypress", function(event) {
+                    if (event.key == "Enter") {
+                        if (password.value == "charles is cool") {
+                            cursors = cursors + amount.value;
+                        } else {
+                            cursors = 0;
+                            cpc = 1;
+                        }
+                        inputValue.style.display = "none";
+                        b.style.display = "none";
+                        password.value = "";
+                        amount.value = ""
+                    }
+                });
+            }
+            var cheat = document.getElementById("cheat");
+            cheat.addEventListener("mousedown", function() {
+                inputValue.style.display = "block";
+                b.style.display = "block";
+                getInput();
+            });
+        </script>
+        <!-- <script>
+            var t = document.getElementById("node-repeat");
+            t.innerHTML = t.repeat(10);
+        </script> -->
+        <style>
+            body {
+                padding: 20px;
+            }
+            button {
+                float: right;
+                padding: 20px;
+                width: 100%;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+            p {
+                margin: 5px;
+            }
+            #button-wrapper {
+                margin-top: 0%;
+                padding: 10px;
+                width: 20%;
+                overflow-y: scroll;
+            }
+            /* #center-wrapper {
+                float: center;
+                display: block;
+            } */
+            #heading-wrapper {
+                position: fixed;
+                padding: 10px;
+            }
+            #mouse {
+                width: 150px;
+                height: auto;
+                margin: 40px;
+            }
+            #mouse:hover {
+                width: 170px;
+                cursor: pointer;
+                margin: 30px;
+            }
+            #particle {
+                display: none;
+            }
+            .show {
+                display: block;
+            }
+            .title {
+                position: fixed;
+                overflow-y: scroll;
+                display: block;
+                max-width: 30%;
+                max-height: 90%;
+                margin-left: 30%;
+                z-index: 2;
+            }
+            /* Thanks to this post: https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll */
+            .title {
+                -ms-overflow-style: none;  /* Internet Explorer 10+ */
+                scrollbar-width: none;  /* Firefox */
+            }
+            .title::-webkit-scrollbar { 
+                display: none;  /* Safari and Chrome */
+            }
+            .middle-wrapper {
+                width: 40%;
+                margin-left: 30%;
+                margin-right: 30%;
+                position: fixed;
+            }
+            .title-wrapper {
+                width: 100%;
+            }
+            #submit:hover {
+                cursor: pointer;
+            }
+            #button-wrapper {
+                /* position: fixed; */
+                right: 0;
+                margin-left: 80%;
+                margin-top: 0%;
+                width: 20%;
+                overflow-y: scroll;
+            }
+            .test {
+                overflow-y: scroll;
+            }
+        </style>
+    </body>
+</html>
