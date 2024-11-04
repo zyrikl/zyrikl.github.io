@@ -1,0 +1,17 @@
+.header {
+    background: url("artwork/background-piano.png");
+    color: rgba(255, 255, 255, 1);
+    width: 100%;
+    height: 25%;
+    padding: 30px;
+    background-repeat: no-repeat;
+}
+.dark {
+    max-width: 90%;
+    font-family: san-serif;
+    font-size: 40pt;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
