@@ -1,0 +1,64 @@
+.mainText {
+    width: 64%;
+    margin-left: 18%;
+    box-shadow: 2px 2px 5px 2px;
+    padding: 15px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/1/17/Greenland_scoresby-sydkapp2_hg.jpg");
+    /* This image has been licensed under Creative Commons CC-BY-SA-2.5 (https://creativecommons.org/licenses/by-sa/2.5/deed.en) */
+    margin-top: 45px;
+  }
+  .header {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 1);
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  .bodyDesign {
+    box-shadow: 1px 1px 2px 1px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 1);
+  }
+  .maintain {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 0, 0.3) 50%);
+    background-size: 40px auto;
+    color: rgba(0, 0, 0, 1);
+    border-radius: 17.5px;
+    padding: 5px;
+  }
+  h1 {
+    font-size: 60pt;
+  }
+  h2 {
+    font-size: 27pt;
+  }
+  h3 {
+    font-size: 20pt;
+  }
+  a {
+    font-size: 11pt;
+    text-decoration: none;
+  }
+  p {
+    font-size: 11pt;
+  }
+  .navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 1);
+  }
+  button {
+    font-size: 15pt;
+    font-family: serif;
+    background: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    padding: 15px;
+    border: none;
+  }
+  button:hover {
+    background: rgba(200, 200, 200, 1);
+    color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+  }
