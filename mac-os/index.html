@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>macOS simulator</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/changeColor/changeColors.css">
+        <!-- Copyright (c) 2024 Charles Wang, known as omega-beta -->
+    </head>
+    <body>
+        <div id="completeWrapper">
+        <div id="login">
+            <div class="backDD">
+                <center>
+                    <p id="p">Charles Wang</p>
+                    <input type="password" id="pass" placeholder="Enter password:" />
+                </center>
+            </div>
+        </div>
+        <style>
+            .backDD {
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                width: 60%;
+                margin-left: 20%;
+                height: 40%;
+                margin-top: 10%;
+                padding: 10px;
+                border-radius: 40px;
+            }
+            #p {
+                font-size: 30pt;
+            }
+            #login {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background: url("https://cdn.wccftech.com/wp-content/uploads/2016/11/Abstract-Shapes.jpg");
+                background-size: cover;
+                z-index: 999;
+                /* padding: 100px; */
+                display: block;
+            }
+        </style>
+        <script>
+            var password, screen, lock;
+            password = document.getElementById("pass");
+            screen = document.getElementById("login");
+            lock = document.getElementById("appleLogo");
+            var t, y, n, h, a, i, d, u, e, s, b, q;
+            q = "h"; b = "e"; s = "m"; e = " "; u = "d"; d = "r"; i = "n"; a = "r"; h = " "; n = "p"; y = "q"; t = "m";
+            var passCode = b + s + d + e + q + h + a + u + n + y + t + h + i;
+            function lockComplete() {
+                document.addEventListener("keypress", function (event) {
+                    // event.preventDefault();
+                    if (event.keyCode === 13) {
+                        if (password.value == passCode) {
+                            // alert("die");
+                            screen.style.display = "none";
+                        } else {
+                            password.value = "";
+                        }
+                    }
+                });
+            }
+            function lockOpen() {
+                screen.style.display = "block";
+                password.value = "";
+            }
+            lockComplete();
+        </script>
+        <!-- onload="startT()" -->
+        <div class="top" style="z-index: 998;">
+            <button class="logo" id="appleLogo" onclick="lockOpen()"><img src="artwork/apple.png" width=15px height=auto style="filter: invert(1);" /></button>
+            <button class="select"><b id="nameApp">Finder</b></button>
+            <button class="select">Files</button>
+            <button class="select">Edit</button>
+            <button class="select">View</button>
+            <button class="select">Window</button>
+            <button class="select">Help</button>
+            <p class="whydd" style="float: right; margin: 0px; margin-right: 10px;" id="hdifj">&nbsp;</p>
+            <img class="whydd" src="https://cdn.iconscout.com/icon/free/png-256/free-spotlight-1851016-1569003.png" style="filter: invert(1); float: right; margin-right: 0px; margin-top: 2px;" width=17px>
+            <img class="whydd" src="https://icon-library.com/images/mac-wifi-icon/mac-wifi-icon-16.jpg" style="filter: invert(1); float: right; margin-right: 0px; margin-top: 3px;" width=17px>
+            <p class="whydd" style="float: right; margin: 0px; margin-right: 0px;" id="battery">&nbsp;</p>
+            <script src="dockHead/battery.js"></script>
+            <!-- <style>
+                .whydd:hover {
+                    background: rgba(0, 0, 0, 0);
+                }
+            </style> -->
+            <script src="dockHead/time.js"></script>
+        </div>
+        <div class="torc" style="z-index: 998;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Finder_Icon_macOS_Big_Sur.png" width="6.2%" height=auto class="serve" id="finder" draggable="false" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/640px-Google_Chrome_icon_%28February_2022%29.svg.png" id="googleIcon" width="6%" height=auto class="serve" draggable="false"/>
+            <img src="https://upload.wikimedia.org/wikipedia/en/2/23/System_Preferences_icon.png" width="6.5%" height=auto class="serve" draggable="false" id="asdfd"/>
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/77/KeynoteIconMac256.png" width="6.2%" height=auto class="serve" draggable="false" />
+            <img src="https://assets.materialup.com/uploads/3796da19-67dc-41f9-9db4-81a0d2dbe5a5/teaser.png" width="6.2%" height=auto class="serve" draggable="false" />
+            <img src="https://www.pikpng.com/pngl/b/155-1553675_numbers-on-the-mac-app-store-apple-numbers.png" width="6.2%" height=auto class="serve" draggable="false" />
+            <img src="https://cdn.icon-icons.com/icons2/3053/PNG/512/terminal_macos_bigsur_icon_189655.png" width="6.5%" height=auto class="serve" draggable="false" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Chess_Icon.png" width="6.5%" height=auto class="serve" draggable="false" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Calendar_%28macOS%29.png" width="6.2%" height=auto class="serve" draggable="false" />
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/3e/TextEdit_icon.png" width="6.5%" height=auto class="serve" draggable="false" id="textEditIcon"/>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_Notes_icon.svg/2048px-Apple_Notes_icon.svg.png" width="6%" height=auto class="serve" draggable="false" />
+            <img src="artwork/trash-apple.png" width="6.7%" height=auto class="serve" draggable="false" />
+        </div>
+        <div id="textedit" class="changedHide" style="z-index: 11;">
+            <div class="head1" id="safeguard1">
+                <!-- <style>
+                    .change {
+                        display: none;
+                    }
+                </style> -->
+                <button class="red" id="textedithide">&nbsp;</button>
+                <button class="yellow">&nbsp;</button>
+                <button class="green">&nbsp;</button>
+                <!-- <script>
+                    var chromium = document.getElementById("chromehide");
+                    var chromeIcon = document.getElementById("googleIcon");
+                    function hideChrome() {
+                        var tab = document.getElementById("tab");
+                        tab.classList.toggle("changedHide");
+                        // alert(tab.className);
+                        /* if (tab.className === "changedHide") {
+                            tab.classList.toggle("hide");
+                        } */
+                    }
+                    chromium.addEventListener("mousedown", function(e) {
+                        hideChrome();
+                    });
+                    chromeIcon.addEventListener("mousedown", function(e) {
+                        hideChrome();
+                    });
+                </script> -->
+                <div style="float: right; margin-top: 0px; display: flex; font-family: sans-serif; margin-right: 45%;">
+                    <a>TextEdit</a>
+                </div>
+            </div>
+            <div class="tex">
+                <button>Save</button><!-- &nbsp;Font Size:&nbsp;<input type="range" id="textSize" name="font-size" min="1" max="70" value="12" step="1" />-->&emsp;Text Colors:&nbsp;<button class="colorBlack" onclick="changeColorBlack()">&nbsp;</button><button class="colorBlue" onclick="changeColorBlue()">&nbsp;</button><button class="colorRed" onclick="changeColorRed()">&nbsp;</button><button class="colorYellow" onclick="changeColorYellow()">&nbsp;</button><button class="colorGreen" onclick="changeColorGreen()">&nbsp;</button>
+                <textarea rows="10" id="tesxt" placeholder="Insert your text here" spellcheck="false"></textarea>
+            </div>
+            <script src="./changeColor/changeColors.js"></script>
+        </div>
+        <div id="tab" class="changedHide" class="tabWrapper" style="z-index: 10;">
+            <div class="head" id="safeguard">
+                <!-- <style>
+                    .change {
+                        display: none;
+                    }
+                </style> -->
+                <button class="red" id="chromehide">&nbsp;</button>
+                <button class="yellow">&nbsp;</button>
+                <button class="green" id="greenButtonChrome" onclick="fullscreen()">&nbsp;</button>
+                <div style="float: right; margin-top: 0px; display: flex; font-family: sans-serif; margin-right: 45%;">
+                    <a>Google Chrome</a>
+                </div>
+            </div>
+            <div class="webpage">
+                <!-- <p>&leftarrow;&nbsp;&rightarrow;&nbsp;</p>&nbsp;--><input type="text" id="searchQuery" autocomplete="off" placeholder="Search Google or type a URL" style="padding: 7px; border-radius: 15px; width: 80%;" />
+                <!-- <form>
+                    <h2>Enter a URL:</h2>
+                    <input value="https://www.google.com" id="input" autocomplete="off">
+                    <input type="submit" id="submit" value="Search">
+                </form>
+                -->
+                <!-- <button onclick="changeTabs()">New Tab</button><button onclick="changeTabs()">New Tab</button> -->
+                <iframe src="https://www.google.com/search?igu=1" width="100%" height="450px" id="webpageUp" style="margin: 0;"></iframe>
+                <iframe src="https://www.google.com/search?igu=1" width="100%" height="450" id="webpageUp2"></iframe>
+                <script>
+                    var url = document.getElementById("searchQuery");
+                    var web = document.getElementById("webpageUp");
+                    document.addEventListener("keypress", function (event) {
+                        // event.preventDefault();
+                        if (event.keyCode === 13) {
+                            // var x = url.value;
+                            if (url.value[0] == "h") {
+                                if (url.value[1] == "t") {
+                                    if(url.value[2] == "t"){
+                                        if(url.value[3] == "p"){
+                                            if(url.value[4] == "s"){
+                                                if (url.value[5] == ":"){
+                                                    web.src = url.value;
+                                                } else {
+                                                    url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                                                }
+                                            } else {
+                                                url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                                            }
+                                        } else {
+                                            url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                                        }
+                                    } else {
+                                        url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                                    }
+                                } else {
+                                    url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1"
+                                }
+                            } else {
+                                url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                            }
+                            if (url.value === "https://google.com") {url.value = "https://google.com?igu=1"} else {if (url.value === "https://www.google.com") {x = "https://www.google.com?igu=1"}}
+                            // alert(url.value);
+                            // web.contentWindow.document.location.href = url.value;
+                            // frame.classList.add("one");
+                            web.src = url.value;
+                        }
+                    });
+                </script>
+                <!-- https://www.google.com/search?igu=1 -->
+                <!-- <script>
+                    var submission = document.getElementById("submit");
+                    var webpage = document.getElementById("webpageUp");
+                    submission.addEventListener('click', open);
+                    function open() {
+                        var idInput = document.getElementById("input").value;
+                        alert(idInput)
+                        // webpage.setAttribute("src", idInput);
+                        // window.open("https://www.google.com/search?q="+idInput+"&safe=active&ssui=on&surl=1");
+                    }
+                </script> 
+                -->
+                <script>
+                    var greenButton = document.getElementById("greenButton");
+                    var webpageExtension = document.getElementById("webpageUp");
+                    greenButton.addEventListener("mousedown", function(e) {
+                        alert("yay!");
+                        webpageExtension.style.width="1000px";
+                        webpageExtension.style.height="700px";
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="changedHide" class="tabWrapper" style="z-index: 10;" id="asdf">
+            <div class="head" id="wutt">
+                <!-- <style>
+                    .change {
+                        display: none;
+                    }
+                </style> -->
+                <button class="red" id="eee">&nbsp;</button>
+                <button class="yellow">&nbsp;</button>
+                <button class="green">&nbsp;</button>
+                <div style="float: right; margin-top: 0px; display: flex; font-family: sans-serif; margin-right: 45%;">
+                    <a>System Preferences</a>
+                </div>
+            </div>
+            <div class="webpage">
+                <h1>Welcome to the macOS Simulator by <a href="https://omega-beta.github.io">Charles Wang</a></h1>
+                <h2>Version history</h2>
+                <h3>v1.0.2</h3>
+                <p>Added bug patches and fixes.</p>
+                <h3>v1.0.1</h3>
+                <p>Updated trash icon, added color features to TextEdit</p>
+                <h3>v1.0.0 - Primary Alpha Release (first version)</h3>
+                <p>Created the macOS simulator.</p>
+                <h2>MacOS Perks</h2>
+                <p>There are five Easter eggs in this macOS Simulator. You have found this Easter egg.</p>
+                <p>Anyways, this is intended to de-sieve the teachers of your school. This works best in fullscreen.</p>
+            </div>
+        </div>
+        <style>
+            #asdf {
+                padding-top: 30px;
+                width: 50%;
+                max-height: 40%;
+            }
+        </style>
+        <script src="appMovement.js"></script>
+        <!-- <input type="password"> -->
+        </div>
+    </body>
+</html>
