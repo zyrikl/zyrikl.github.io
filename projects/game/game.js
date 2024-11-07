@@ -1,6 +1,6 @@
 var programCode = function(processingInstance) {
     with (processingInstance) {
-        size(400, 400); 
+        size(1000, 500); 
         frameRate(60);
         var x, y, a, b, c, d, player, obstacles, points, pointText, speed;
         a = mouseX - 20;
@@ -15,7 +15,7 @@ var programCode = function(processingInstance) {
         background(0, 0, 0);
         player = function() {
             fill(0, 0, 0);
-            rect(0, 270, 400, 130);
+            rect(0, 270, 1000, 130);
             fill(255, 0, 0);
             quad(a, 270, b, 270, b, 310, a, 310);
             a = mouseX - 20;
@@ -30,7 +30,7 @@ var programCode = function(processingInstance) {
             fill(x, y, x+y);
             rect(x, y, 10, 40);
             if (y >= 350) {
-                x = random(0, 400);
+                x = random(0, 1000);
             }
             y = (y + speed) % 370;
             if (x >= a && x <= b && y >= 270) {
@@ -40,7 +40,7 @@ var programCode = function(processingInstance) {
         pointText = function() {
             textSize(20);
             fill(0, 0, 0);
-            rect(0, 0, 400, 30);
+            rect(0, 0, 1000, 30);
             fill(255, 0, 0);
             var font3 = createFont("monospace");
             textFont(font3);
@@ -48,7 +48,7 @@ var programCode = function(processingInstance) {
         };
         var playButton = function() {
             fill(0, 0, 0);
-            rect(0, 0, 400, 400);
+            rect(0, 0, 1000, 500);
             fill(255, 0, 0);
             rect(100, 100, 200, 100);
             fill(0, 0, 0);
@@ -102,7 +102,7 @@ var programCode = function(processingInstance) {
             }
         };
         fill(0, 0, 0);
-        rect(0, 0, 400, 400);
+        rect(0, 0, 1000, 500);
         }
         }
     }
