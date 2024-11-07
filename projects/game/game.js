@@ -1,7 +1,7 @@
 var programCode = function(processingInstance) {
     with (processingInstance) {
         size(400, 400); 
-        frameRate(50);
+        frameRate(60);
         var x, y, a, b, c, d, player, obstacles, points, pointText, speed;
         a = mouseX - 20;
         b = a + 40;
