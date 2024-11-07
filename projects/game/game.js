@@ -44,7 +44,7 @@ var programCode = function(processingInstance) {
             fill(255, 0, 0);
             var font3 = createFont("monospace");
             textFont(font3);
-            text("Points: " + points, 100, 25);
+            text("Points: " + points, 2500, 25);
         };
         var playButton = function() {
             fill(0, 0, 0);
@@ -55,19 +55,19 @@ var programCode = function(processingInstance) {
             textSize(50);
             var font1 = createFont("fantasy");
             textFont(font1);
-            text("Play!", 152, 165);
+            text("Play!", 400, 165);
             fill(255, 0, 0);
             textSize(17);
-            text("Try to get the items.", 127, 250);
+            text("Try to get the items.", 300, 250);
             textSize(45);
             var font2 = createFont("serif");
             textFont(font2);
-            text("Poindexter's Game", 32, 340);
+            text("Poindexter's Game", 100, 340);
         };
         var closeButton = function() {
             fill(255, 255, 255);
             textSize(20);
-            text("X", 375, 25);
+            text("X", 975, 25);
         };
         draw = function() {
             playButton();
@@ -75,7 +75,7 @@ var programCode = function(processingInstance) {
         mousePressed = function() {
             if (mouseX > 100 && mouseX < 300 && mouseY > 100 && mouseY < 200) {
             fill(0, 0, 0);
-            rect(0, 0, 400, 400);
+            rect(0, 0, 1000, 500);
             draw = function() {
             obstacles();
             player();
