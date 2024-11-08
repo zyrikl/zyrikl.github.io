@@ -84,17 +84,29 @@ var programCode = function(processingInstance) {
                     player();
                     pointText();
                     closeButton();
+                    if (points >= 300) {
+                        speed = 5;
+                    }
+                    if (points >= 500) {
+                        speed = 5;
+                    }
                     if (points >= 1000) {
                         speed = 6;
                     }
                     if (points >= 1700) {
-                        speed = 8;
-                    }
-                    if (points >= 3000) {
                         speed = 10;
                     }
-                    if (points >= 4000) {
+                    if (points >= 2000) {
+                        speed = 11;
+                    }
+                    if (points >= 3000) {
                         speed = 12;
+                    }
+                    if (points >= 4000) {
+                        speed = 13;
+                    }
+                    if (points >= 5000) {
+                        speed = 14;
                     }
                 };
                 mouseClicked = function() {
