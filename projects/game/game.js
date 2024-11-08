@@ -1,6 +1,6 @@
 var programCode = function(processingInstance) {
     with (processingInstance) {
-        size(1000, 500); 
+        size(1000, 600); 
         frameRate(60);
         var x, y, a, b, c, d, player, obstacles, points, pointText, speed;
         a = mouseX - 20;
@@ -48,9 +48,9 @@ var programCode = function(processingInstance) {
         };
         var playButton = function() {
             fill(0, 0, 0);
-            rect(0, 0, 1000, 500);
+            rect(0, 0, 1000, 600);
             fill(255, 0, 0);
-            rect(100, 100, 200, 100);
+            rect(300, 100, 200, 100);
             fill(0, 0, 0);
             textSize(50);
             var font1 = createFont("fantasy");
