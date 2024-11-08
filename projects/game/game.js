@@ -13,16 +13,6 @@ var programCode = function(processingInstance) {
         points = 0;
         noStroke();
         background(0, 0, 0);
-        player = function() {
-            fill(0, 0, 0);
-            rect(0, 270, 400, 130);
-            fill(255, 0, 0);
-            quad(a, 270, b, 270, b, 310, a, 310);
-            a = mouseX - 20;
-            b = a + 40;
-            c = mouseY + 20;
-            d = c + 40;
-        };
         obstacles = function() {
             x = x;
             fill(0, 0, 0);
@@ -36,6 +26,20 @@ var programCode = function(processingInstance) {
             if (x >= a && x <= b && y >= 270) {
                 points += 1;
             }
+        };
+        player = function() {
+            fill(0, 0, 0);
+            rect(0, 270, 400, 130);
+            obstacles();
+            fill(255, 0, 0);
+            quad(a, 270, b, 270, b, 310, a, 310);
+            fill(0, 0, 0);
+            quad(a, 310, b, 310, b, 400, a, 400);
+            rect(0, 360, 400, 80);
+            a = mouseX - 20;
+            b = a + 40;
+            c = mouseY + 20;
+            d = c + 40;
         };
         pointText = function() {
             textSize(20);
@@ -77,7 +81,6 @@ var programCode = function(processingInstance) {
                 fill(0, 0, 0);
                 rect(0, 0, 400, 400);
                 draw = function() {
-                    obstacles();
                     player();
                     pointText();
                     closeButton();
