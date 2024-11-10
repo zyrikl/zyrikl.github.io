@@ -122,5 +122,5 @@ var programCode = function(processingInstance) {
         };
     }
 };
-var canvas = document.getElementById("canvas");
-var processingInstance = new Processing(canvas, programCode); 
+var canvas = document.getElementById("canvas1");
+var processingInstance = new Processing(canvas1, programCode); 
