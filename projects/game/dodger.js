@@ -1,4 +1,4 @@
-var programCode = function(processingInstance) {
+var programCode2 = function(processingInstance) {
     with (processingInstance) {
         size(400, 400); 
         frameRate(60);
@@ -8,5 +8,5 @@ var programCode = function(processingInstance) {
         text("Play", 0, 0);
     }
 };
-var canvas = document.getElementById("canvas2");
-var processingInstance = new Processing(canvas2, programCode); 
+var canvas2 = document.getElementById("canvas2");
+var processingInstance2 = new Processing(canvas2, programCode2); 
