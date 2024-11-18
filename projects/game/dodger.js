@@ -9,4 +9,4 @@ var programCode = function(processingInstance) {
     }
 };
 var canvas = document.getElementById("canvas2");
-var processingInstance = new Processing(canvastwo, programCode); 
+var processingInstance = new Processing(canvas, programCode); 
