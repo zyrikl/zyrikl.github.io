@@ -8,5 +8,5 @@ var programCodetwo = function(processingInstancetwo) {
         text("Play", 0, 0);
     }
 };
-var canvastwo = document.getElementById("canvastwo");
+var canvastwo = document.getElementById("canvas2");
 var processingInstancetwo = new Processing(canvastwo, programCodetwo); 
