@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Invaders Beware!</title>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+        <script>
+             var programCode = function(processingInstance) {
+                with (processingInstance) {
+                    size(400, 400);
+                    frameRate(60);
+                    var x, y, angle;
+                    var points = 0;
+                    var xrect;
+                    var yrect;
+                    var fallingx;
+                    var fallingy;
+                    fallingx = random(40, 360);
+                    fallingy = 0;
+                    x = 175;
+                    y = 275;
+                    rect(x, y, 50, 50);
+                    var playButton = function() {
+                        fill(0, 0, 0);
+                        rect(0, 0, 400, 400);
+                        fill(255, 0, 0);
+                        rect(100, 100, 200, 100);
+                        fill(0, 0, 0);
+                        textSize(50);
+                        var font1 = createFont("fantasy");
+                        textFont(font1);
+                        text("Play!", 152, 165);
+                        fill(255, 0, 0);
+                        textSize(17);
+                        text("Destroy the items.", 127, 250);
+                        textSize(45);
+                        var font2 = createFont("serif");
+                        textFont(font2);
+                        text("Invaders Beware!", 32, 340);
+                    };
+                    var closeButton = function() {
+                        fill(255, 255, 255);
+                        textSize(20);
+                        text("X", 375, 25);
+                    };
+                    pointText = function() {
+                        textSize(20);
+                        fill(0, 0, 0);
+                        rect(0, 0, 400, 30);
+                        fill(255, 0, 0);
+                        var font3 = createFont("monospace");
+                        textFont(font3);
+                        text("Points: " + points, 100, 25);
+                    };
+                    function move() {
+                        fill(255, 0, 0);
+                        if(x<0){x=400;}
+                        if(y<0){y=400;}
+                        if(x>400){x=0;}
+                        if(y>400){y=0;}
+                        keyPressed = function() {
+                            // fill(0, 0, 0);
+                            // rect(0, 0, 400, 400);
+                            fill(255, 0, 0);
+                            // attackers();
+                            // W key
+                            if (keyCode === 87) {
+                                y = y - 15;
+                            } else {rect(x, y, 50, 50);}
+                            // A key
+                            if (keyCode === 65) {
+                                x = x - 15;
+                            } else {rect(x, y, 50, 50);}
+                            // S key
+                            if (keyCode === 83) {
+                                y = y + 15;
+                            } else {rect(x, y, 50, 50);}
+                            // D key
+                            if (keyCode === 68) {
+                                x = x + 15;
+                            } else {rect(x, y, 50, 50);}
+                            if (keyCode === 32) {
+                                xrect = x+20;
+                                yrect = y;
+                            }
+                        };
+                        rect(x,y,50,50);
+                        fill(255, 255, 255);
+                        rect(xrect, yrect, 10, 40);
+                        yrect -= 20;
+                        if (fallingy === 400) {
+                            fallingy = 0;
+                            fallingx = random(40, 320);
+                        }
+                        fill(255, 0, 0);
+                    }
+                    function attackers() {
+                        fill(50, 100, 255);
+                        rect(fallingx, fallingy, 40, 40);
+                        fallingy += 2;
+                        // need || for or operator
+                        /* if (fallingx < xrect && fallingx+40 > xrect && falingy+40 === yrect) {
+                            pointText();
+                            move();
+                            fill(255, 0, 0);
+                        } else {
+                            if (fallingy === 400) {
+                                points = 0;
+                            }
+                        } */
+                        if (fallingy > yrect && fallingx < xrect && fallingx+40 > xrect+5) {
+                            fallingy = 400;
+                            points += 6;
+                        }
+                        if (fallingy === 400) {
+                            points -= 5;
+                            if (points < 0) {
+                                points = 0;
+                            }
+                        }
+                    }
+                    function game() {
+                        fill(0, 0, 0);
+                        rect(0, 0, 400, 400);
+                        noStroke();
+                        attackers();
+                        fill(255, 0, 0);
+                        move();
+                    }
+                    draw = function() {
+                        playButton();
+                        tryclick();
+                        tryclick();
+                    };
+                    tryclick = function() {
+                        mousePressed = function() {
+                            if (mouseX > 100 && mouseX < 300 && mouseY > 100 && mouseY < 200) {
+                                draw = function() {
+                                    game();
+                                    pointText();
+                                    closeButton();
+                                    fill(255, 0, 0);
+                                };
+                                mouseClicked = function() {
+                                    if (mouseX > 365 && mouseX < 395 && mouseY > 15 && mouseY < 35) {
+                                        draw = function() {
+                                            playButton();
+                                        };
+                                    }
+                                };
+                            }
+                        };
+                    };
+                }
+            };
+            var canvas = document.getElementById("canvas");
+            var processingInstance = new Processing(canvas, programCode);
+        </script> 
+    </body>
+</html>
