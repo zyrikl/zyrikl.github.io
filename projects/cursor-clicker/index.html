@@ -21,11 +21,15 @@
         <div class="title">
             <div class="title-wrapper">
                 <h1 style="font-size: 40pt;">Cursor Clicker</h1>
-                <p>Welcome to Cursor Clicker, an idle game created by a bored person who can be found <a href="../../">here</a>. Begin the game by clicking on the cursor. Buying upgrades will let you automatically get cursors or let you click faster. You can also cheat, but be warned: you might lose <b><i>all</i></b> your progress if you get it wrong!</p>
+                <p>Welcome to Cursor Clicker, an idle game created by a bored person who can be found <a href="https://my-trivial-error.github.io">here</a>. Begin the game by clicking on the cursor. Buying upgrades will let you automatically get cursors or let you click faster. You can also cheat, but be warned: you might lose <b><i>all</i></b> your progress if you get it wrong!</p>
                 <br>
                 <h2>Update log</h2>
                 <p>Make sure to read all of the updates, becasue I'm still working on this thing. Note to self: I want to add gamemodes later though. For now, signing off! - C.W</p>
                 <ul>
+                    <li>
+                        <h4>September 12, 2024</h4>
+                        <p>Added keyboard shortcuts. <div style="color: white;">shift + x = delete all cursors and progress, shift + p = get infinity everything, shift + c adds to your cpc, shift + q adds to your cps.</div></p>
+                    </li>
                     <li>
                         <h4>July 19, 2024</h4>
                         <p>Added some more better click upgrades.</p>
@@ -52,21 +56,14 @@
         <div id="button-wrapper">
             <div class="test">
                 <h2 style="padding-top: 0px;">Upgrades</h2>
-                <button id="auto1">Auto clicker 1: (price: <a id="price1">10</a>)</button>
-                <br>
-                <button id="auto2">Auto clicker 10: (price: <a id="price2">100</a>)</button>
-                <br>
-                <button id="auto3">Auto clicker 100: (price: <a id="price3">1,000</a>)</button>
-                <br>
-                <button id="auto4">Auto clicker 1,000: (price: <a id="price4">10,000</a>)</button>
-                <br>
-                <button id="auto5">Auto clicker 10,000: (price: <a id="price5">100,000</a>)</button>
-                <br>
-                <button id="auto6">Auto clicker 100,000: (price: <a id="price6">1,000,000</a>)</button>
-                <br>
-                <button id="auto7">Auto clicker 1,000,000: (price: <a id="price7">10,000,000</a>)</button>
-                <br>
-                <button id="auto8">Auto clicker Your CPC: (price: <a>10 times that amount</a>)</button>
+                <button id="auto1">Auto clicker (price: <a id="price1">10</a>): 1 per second</button>
+                <button id="auto2">Auto clicker (price: <a id="price2">100</a>): 10 per second</button>
+                <button id="auto3">Auto clicker (price: <a id="price3">1,000</a>): 100 per second</button>
+                <button id="auto4">Auto clicker (price: <a id="price4">10,000</a>): 1,000 per second</button>
+                <button id="auto5">Auto clicker (price: <a id="price5">100,000</a>): 10,000 per second</button>
+                <button id="auto6">Auto clicker (price: <a id="price6">1,000,000</a>): 100,000 per second</button>
+                <button id="auto7">Auto clicker (price: <a id="price7">10,000,000</a>): 1,000,000 per second</button>
+                <!-- <button id="autonone"></button> -->
                 <button id="cpc1">Better clicks 1: (price 10)</button>
                 <button id="cpc2">Better clicks 10: (price: 100)</button>
                 <button id="cpc3">Better clicks 100: (price: 1,000)</button>
@@ -139,7 +136,6 @@
             var auto5 = document.getElementById("auto5");
             var auto6 = document.getElementById("auto6");
             var auto7 = document.getElementById("auto7");
-            var auto8 = document.getElementById("auto8");
 
             var price1 = document.getElementById("price1");
             var price2 = document.getElementById("price2");
@@ -220,7 +216,6 @@
             auto(auto5, 100000);
             auto(auto6, 1000000);
             auto(auto7, 10000000);
-            auto(auto8, cpc)
             cpcBuild(cpc1, 10);
             cpcBuild(cpc2, 100);
             cpcBuild(cpc3, 1000);
@@ -248,7 +243,7 @@
                     password.value = "";
                     amount.value = ""
                 });
-                document.addEventListener("keypress", function(event) {
+                inputValue.addEventListener("keypress", function(event) {
                     if (event.key == "Enter") {
                         if (password.value == "charles is cool") {
                             cursors = cursors + amount.value;
@@ -268,6 +263,26 @@
                 inputValue.style.display = "block";
                 b.style.display = "block";
                 getInput();
+            });
+            document.addEventListener("keydown", function(event) {
+                if (event.key == "C") {
+                    cpc += 100000000000000000000;
+                    numCpc.innerHTML = cpc;
+                }
+                if (event.key == "Q") {
+                    alt += 100000000000000000000;
+                }
+                if (event.key == "P") {
+                    alt += 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+                    cpc += 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+                    numCpc.innerHTML = cpc;
+                }
+                if (event.key == "X") {
+                    cursors = 0;
+                    cpc = 1;
+                    numCpc.innerHTML = cpc;
+                    alt = 0;
+                }
             });
         </script>
         <!-- <script>
