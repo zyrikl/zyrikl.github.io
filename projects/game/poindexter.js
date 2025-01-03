@@ -62,7 +62,7 @@ var programCode = function(processingInstance) {
             text("Play!", 152, 165);
             fill(255, 0, 0);
             textSize(17);
-            text("Try to get the items using the mouse.", 105, 250);
+            text("Try to get the items using the mouse.", 95, 250);
             textSize(45);
             var font2 = createFont("serif");
             textFont(font2);
