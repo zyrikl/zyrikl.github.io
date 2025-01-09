@@ -192,8 +192,8 @@ var end = `
   async function populateSelectOptions() {
     const selectElement = document.getElementById("iframeSelect");
     const extensions = {
-      "Lightspeed Filter Agent": "chrome-extension://adkcpkpghahmbopkjchobieckeoaoeem/icon-128.png",
-      "Lightspeed Classroom": "chrome-extension://kkbmdgjggcdajckdlbngdjonpchpaiea/assets/icon-classroom-128.png"
+      "Lightspeed Filter Agent": "chrome-extension://adkcpkpghahmbopkjchobieckeoaoeem/",
+      "Lightspeed Classroom": "chrome-extension://kkbmdgjggcdajckdlbngdjonpchpaiea/"
     };
     
     let hasSupportedExtensions = false;
@@ -219,7 +219,7 @@ var end = `
 
   populateSelectOptions();
   
-  function replaceIframes(container, iframeSrc) {
+  /* function replaceIframes(container, iframeSrc) {
     for (var i = 0; i < 1000; i++) {
       var iframe = document.createElement('iframe');
       iframe.src = iframeSrc;
@@ -233,7 +233,7 @@ var end = `
       }
       replaceIframes(container, iframeSrc);
     }, 500);
-  }
+  } */
 
   function warning() {
     var overlay = document.getElementById("overlay");
@@ -247,7 +247,7 @@ var end = `
     var iframeContainer = popupDocument.createElement('div');
     iframeContainer.id = 'iframeContainer';
     popupBody.appendChild(iframeContainer);
-    replaceIframes(iframeContainer, selectedSrc);
+    // replaceIframes(iframeContainer, selectedSrc);
     setTimeout(function() {
       popup.close();
       var extensionId = selectedSrc.substring(selectedSrc.indexOf("//") + 2, selectedSrc.indexOf("/", selectedSrc.indexOf("//") + 2));
