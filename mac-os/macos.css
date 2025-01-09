@@ -1,0 +1,218 @@
+body {
+    background-image: url("Seq1x1.png");
+    background-size: cover;
+    user-select: none;
+    font-family: sans-serif;
+    padding: none;
+    padding-top: 30px;
+}
+button {
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    padding: 5px;
+}
+a {
+    color: white;
+}
+#navbar {
+    padding: 0;
+    padding-left: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    margin: 0;
+    background: linear-gradient(90deg, rgba(245, 140, 0, 0.8), rgba(70, 100, 255, 0.7));
+    display: inline-block;
+    max-height: 30px;
+    padding-right: 20px;
+}
+#apple_logo_img {
+    width: 17px;
+    height: auto;
+    filter: invert(1);
+}
+#apple_selection {
+    width: 30px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+#finder_selection {
+    margin: none;
+    width: 60px;
+}
+#edit_selection {
+    margin: none;
+    width: 45px;
+}
+#view_selection {
+    margin: none;
+    width: 50px;
+}
+#window_selection {
+    margin: none;
+    width: 75px;
+}
+#help_selection {
+    margin: none;
+    width: 50px;
+}
+#dock {
+    margin-left: 6%;
+    width: 85%;
+    padding: 0px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 7px;
+    height: 5%;
+    padding-bottom: 35px;
+    padding-left: 10px;
+}
+.dock_icons {
+    width: 4%;
+    margin: 1%;
+    margin-right: 0%;
+    margin-bottom: 60px;
+}
+#finder_icon {
+    width: 4.4%;
+}
+#safari_icon {
+    width: 3.7%;
+    height: auto;
+    margin-bottom: 62px;
+}
+#mail_icon {
+    width: 4.25%;
+}
+#appstore_icon {
+    width: 4.25%;
+}
+#systemsettings_icon {
+    width: 4.25%;
+}
+#itunes_icon {
+    width: 3.5%;
+    margin-bottom: 64px;
+}
+#downloads_icon {
+    margin-bottom: 65px;
+    width: 4.7%;
+}
+#trash_icon {
+    width: 4.5%;
+}
+#launchpad_icon {
+    width: 4.5%;
+}
+#time {
+    float: right;
+    margin-top: 0px;
+    padding-top: 5px;
+    color: white;
+}
+#battery_icon {
+    margin-top: 0px;
+    padding-top: 5px;
+    float: right;
+    margin-right: 10px;
+    color: white;
+}
+.nav_selection {
+    margin: none;
+    padding: 5px;
+    height: 30px;
+    margin-top: none;
+    font-size: 11pt;
+    height: 30px;
+    vertical-align: top;
+}
+.nav_selection:hover {
+    background: rgba(0, 0, 0, 0.7);
+    filter: invert(1);
+}
+#safari_window {
+    position: fixed;
+    display: none;
+    /* margin-top: 30px; */
+    width: 70%;
+}
+#safari_iframe {
+    width: 100%;
+    border: none;
+    height: 500px;
+    border-radius: 0px 0px 15px 15px;
+}
+.show {
+    display: block !important;
+}
+.window_bar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    max-height: 55px;
+    padding-left: 15px;
+}
+iframe {
+    margin-top: 0;
+}
+.traffic_buttons {
+    margin: 1px;
+    margin-top: 5px;
+    background: rgba(255, 0, 0, 1);
+    width: 12px;
+    height: 12px;
+    border-radius: 15px;
+}
+#safari_title {
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    vertical-align: top;
+}
+#minimize_safari {
+    background: rgba(255, 240, 0, 1);
+}
+#maximize_safari {
+    background: rgba(0, 255, 100, 1);
+}
+#finder_selection {
+    color: white;
+}
+.fullscreen {
+    position: fixed;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0;
+    top: 0;
+    margin-top: 30px;
+}
+input {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    border-radius: 15px;
+    margin-top: 0;
+    color: white;
+    width: 90%;
+}
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+input:focus {
+    outline-width: 0;
+}
+#convert_cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: url("mouseapple.png");
+}
